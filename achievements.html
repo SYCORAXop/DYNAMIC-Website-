@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  body { 
+    background-color: #000000; 
+    color: #ffffff; 
+    font-family: 'Arial Black', sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    text-align: center; 
+    overflow-x: hidden;
+  }
+
+  #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; background-color: #000; }
+
+  /* FLOATING LOGO */
+  .home-trigger {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    width: 80px; 
+    height: 80px;
+    cursor: pointer;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.5));
+  }
+  .home-trigger:hover { transform: scale(1.1) rotate(-5deg); }
+  @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+  .home-trigger img { width: 100%; height: 100%; animation: pulse 3s infinite ease-in-out; }
+
+  nav { 
+    background-color: rgba(17, 17, 17, 0.9); 
+    padding: 20px 0; 
+    border-top: 2px solid #ff0000; 
+    border-bottom: 2px solid #ff0000; 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+  }
+  nav a { color: white; text-decoration: none; text-transform: uppercase; font-size: 1rem; transition: 0.3s; letter-spacing: 1px; font-weight: bold; }
+  nav a:hover { color: #ff0000; }
+
+  header { background-color: #ff0000; padding: 60px 20px; border-bottom: 5px solid #ffffff; }
+  h1 { font-size: 3rem; margin: 0; letter-spacing: -2px; }
+
+  .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+
+  /* REFINED TROPHY CARDS */
+  .achievement-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px; }
+  
+  .trophy-card {
+    background: linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(10, 10, 10, 0.9));
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 40px;
+    text-align: left;
+    transition: 0.4s;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trophy-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 5px;
+    background: #ffd700; /* Gold top bar */
+  }
+
+  .trophy-card:hover { border-color: #ffd700; transform: translateY(-5px); box-shadow: 0 10px 40px rgba(255, 215, 0, 0.1); }
+  
+  .trophy-icon { font-size: 5rem; color: #ffd700; text-shadow: 0 0 30px rgba(255, 215, 0, 0.4); text-align: center; }
+  
+  .trophy-info h3 { margin: 0; font-size: 2.2rem; color: #fff; text-transform: uppercase; letter-spacing: -1px; }
+  .event-tag { color: #ffd700; font-size: 0.9rem; letter-spacing: 2px; font-weight: bold; display: block; margin-bottom: 10px; }
+  
+  .stats-row { 
+    display: flex; 
+    gap: 20px; 
+    margin: 20px 0; 
+    padding: 15px 0; 
+    border-top: 1px solid #222; 
+    border-bottom: 1px solid #222; 
+  }
+  .stat-item { text-align: center; }
+  .stat-label { font-size: 0.6rem; color: #888; text-transform: uppercase; display: block; }
+  .stat-value { font-size: 1.1rem; color: #ffd700; font-weight: bold; }
+
+  .mvp-box { background: rgba(255, 215, 0, 0.1); border: 1px solid #ffd700; padding: 5px 15px; border-radius: 5px; display: inline-block; font-size: 0.8rem; color: #ffd700; }
+
+  /* SILVER VARIANT */
+  .silver-card::after { background: #c0c0c0; }
+  .silver-card .trophy-icon, .silver-card .event-tag, .silver-card .stat-value, .silver-card .mvp-box { color: #c0c0c0; border-color: #c0c0c0; }
+  .silver-card .mvp-box { background: rgba(192, 192, 192, 0.1); }
+
+  footer { padding: 60px; color: #555; font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <a href="index.html" class="home-trigger">
+    <img src="https://res.cloudinary.com/dzpepncyt/image/upload/v1767845420/web_logo_xlr3xz.png" alt="DYNAMIC LOGO">
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="achievements.html" style="color:#ff0000">Achievements</a>
+    <a href="roster.html">Roster</a>
+    <a href="join.html">Join Us</a>
+  </nav>
+
+  <header>
+    <h1>HALL OF FAME</h1>
+    <p>THE VICTORIES THAT DEFINED OUR LEGACY</p>
+  </header>
+
+  <div class="container">
+    <div class="achievement-grid">
+      
+      <div class="trophy-card">
+        <div class="trophy-icon"><i class="fas fa-trophy"></i></div>
+        <div class="trophy-info">
+          <span class="event-tag">WINNER - DEC 2025</span>
+          <h3>BGIS Champions</h3>
+          <p style="font-family: Arial; color: #ccc;">A clinical performance in the snowy season. Dynamic Esports dismantled the competition with a record-breaking sweep in the Finals.</p>
+          <div class="stats-row">
+            <div class="stat-item"><span class="stat-label">Total Kills</span><span class="stat-value">142</span></div>
+            <div class="stat-item"><span class="stat-label">Win Rate</span><span class="stat-value">100%</span></div>
+            <div class="stat-item"><span class="stat-label">Prize</span><span class="stat-value">₹10,00,000</span></div>
+          </div>
+          <div class="mvp-box">Tournament MVP: SAHIL</div>
+        </div>
+      </div>
+
+      <div class="trophy-card silver-card">
+        <div class="trophy-icon"><i class="fas fa-medal"></i></div>
+        <div class="trophy-info">
+          <span class="event-tag">RUNNERS UP - AUG 2025</span>
+          <h3>Valorant champions tour</h3>
+          <p style="font-family: Arial; color: #ccc;">A grueling marathon of competitive play. We fought through the Losers Bracket to secure a podium finish in front of 50k live viewers.</p>
+          <div class="stats-row">
+            <div class="stat-item"><span class="stat-label">Placement</span><span class="stat-value">2nd / 64</span></div>
+            <div class="stat-item"><span class="stat-label">Final Score</span><span class="stat-value">2-3</span></div>
+          </div>
+          <div class="mvp-box">Top Fragger: SUYASH</div>
+        </div>
+      </div>
+
+      <div class="trophy-card">
+        <div class="trophy-icon"><i class="fas fa-crown"></i></div>
+        <div class="trophy-info">
+          <span class="event-tag">1ST PLACE - MAY 2024</span>
+          <h3>Pro Scrims Season 4</h3>
+          <p style="font-family: Arial; color: #ccc;">Dominance over 8 weeks of consistent league play. Dynamic held the #1 spot on the leaderboard for the entire duration of the season.</p>
+          <div class="stats-row">
+            <div class="stat-item"><span class="stat-label">Weeks at #1</span><span class="stat-value">8</span></div>
+            <div class="stat-item"><span class="stat-label">Avg. Placement</span><span class="stat-value">1.4</span></div>
+          </div>
+          <div class="mvp-box">Consistency King: ARFAN</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>&copy; 2018 DYNAMIC ESPORTS | ALL RIGHTS RESERVED</footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ff0000" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.6, "random": true },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+      },
+      "interactivity": {
+        "detect_on": "window",
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+        "modes": { "grab": { "distance": 200, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>

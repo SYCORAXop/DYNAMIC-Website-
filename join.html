@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  body { 
+    background-color: #000000; 
+    color: #ffffff; 
+    font-family: 'Arial Black', sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    text-align: center; 
+    overflow-x: hidden; 
+  }
+  
+  #particles-js { 
+    position: fixed; 
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0; 
+    z-index: -1; 
+    background-color: #000; 
+  }
+
+  /* FIXED LOGO ON BOTTOM RIGHT */
+  .home-trigger {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    width: 80px; 
+    height: 80px;
+    cursor: pointer;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.5));
+  }
+  .home-trigger:hover {
+    transform: scale(1.1) rotate(-5deg);
+    filter: drop-shadow(0 0 25px rgba(255, 0, 0, 0.8));
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  .home-trigger img {
+    width: 100%;
+    height: 100%;
+    animation: pulse 3s infinite ease-in-out;
+  }
+  
+  nav { 
+    background-color: rgba(17, 17, 17, 0.9); 
+    padding: 20px 0; 
+    border-top: 2px solid #ff0000; 
+    border-bottom: 2px solid #ff0000; 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    backdrop-filter: blur(5px); 
+  }
+  nav a { color: white; text-decoration: none; text-transform: uppercase; font-size: 1rem; transition: 0.3s; letter-spacing: 1px; font-weight: bold; }
+  nav a:hover { color: #ff0000; }
+  
+  header { background-color: #ff0000; padding: 40px 20px; border-bottom: 5px solid #ffffff; }
+  h1 { font-size: 3rem; margin: 0; letter-spacing: -2px; }
+
+  .form-container {
+    max-width: 650px;
+    margin: 50px auto;
+    background: rgba(0, 0, 0, 0.75);
+    border: 2px solid #ff0000;
+    border-radius: 15px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    text-align: left;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  #success-message {
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .success-icon { font-size: 5rem; color: #ff0000; margin-bottom: 20px; }
+  .success-title { font-size: 2rem; color: #fff; margin-bottom: 10px; }
+  .success-text { color: #ccc; margin-bottom: 30px; font-family: 'Arial', sans-serif; }
+
+  h2 { color: #ff0000; text-transform: uppercase; margin-bottom: 30px; text-align: center; }
+  .input-group { margin-bottom: 20px; }
+  label { display: block; margin-bottom: 8px; color: #ff0000; font-size: 0.8rem; text-transform: uppercase; }
+  
+  input, select, textarea { 
+    width: 100%; 
+    padding: 12px; 
+    background: rgba(30, 30, 30, 0.8); 
+    border: 1px solid #444; 
+    color: white; 
+    border-radius: 5px; 
+    font-family: 'Arial', sans-serif; 
+    box-sizing: border-box;
+  }
+  
+  input:focus, select:focus, textarea:focus { border-color: #ff0000; outline: none; box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+
+  .submit-btn { 
+    background: #ff0000; 
+    color: white; 
+    border: none; 
+    padding: 18px 30px; 
+    font-family: 'Arial Black'; 
+    font-size: 1.2rem; 
+    width: 100%; 
+    cursor: pointer; 
+    transition: 0.3s; 
+    margin-top: 20px; 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+    display: block; 
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .submit-btn:hover { background: #fff; color: #ff0000; box-shadow: 0 0 20px #ff0000; }
+
+  footer { padding: 40px; font-size: 0.8rem; color: #555; position: relative; }
+</style>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <a href="index.html" class="home-trigger" title="Go to Home">
+    <img src="https://res.cloudinary.com/dzpepncyt/image/upload/v1767845420/web_logo_xlr3xz.png" alt="DYNAMIC LOGO">
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="roster.html">Roster</a>
+    <a href="join.html" style="color:#ff0000">Join Us</a>
+  </nav>
+
+  <header>
+    <h1>RECRUITMENT</h1>
+  </header>
+
+  <section class="form-container">
+    <div id="application-form">
+      <h2>Apply to DYNAMIC</h2>
+      <form id="joinForm">
+        <div class="input-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter your name" required>
+        </div>
+        <div class="input-group">
+          <label>In-Game Name (IGN)</label>
+          <input type="text" placeholder="e.g. SYCORAX_OP" required>
+        </div>
+        <div class="input-group">
+          <label>Primary Game</label>
+          <input type="text" placeholder="Which game do you play?" required>
+        </div>
+        <div class="input-group">
+          <label>Role</label>
+          <select required>
+            <option value="" disabled selected>Choose your specialty</option>
+            <option value="assaulter">Assaulter</option>
+            <option value="sniper">Sniper</option>
+            <option value="igl">IGL</option>
+            <option value="support">Support / Manager</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label>Experience</label>
+          <textarea rows="3" placeholder="List your previous teams..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">SUBMIT APPLICATION</button>
+      </form>
+    </div>
+
+    <div id="success-message">
+      <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+      <div class="success-title">APPLICATION SENT!</div>
+      <p class="success-text">Your request has been beamed to DYNAMIC leadership. We will review your stats and contact you soon.</p>
+      <a href="index.html" class="submit-btn">RETURN HOME</a>
+    </div>
+  </section>
+
+  <footer>&copy; 2018 DYNAMIC ESPORTS | ALL RIGHTS RESERVED</footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ff0000" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.6, "random": true },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+      },
+      "interactivity": {
+        "detect_on": "window",
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+        "modes": { "grab": { "distance": 200, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
+      },
+      "retina_detect": true
+    });
+
+    document.getElementById('joinForm').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+      document.getElementById('application-form').style.display = 'none';
+      document.getElementById('success-message').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  body { 
+    background-color: #000000; 
+    color: #ffffff; 
+    font-family: 'Arial Black', sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    text-align: center; 
+    overflow-x: hidden;
+  }
+
+  #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #000;
+  }
+
+  /* FIXED LOGO ON BOTTOM RIGHT */
+  .home-trigger {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    width: 80px; 
+    height: 80px;
+    cursor: pointer;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.5));
+  }
+  .home-trigger:hover {
+    transform: scale(1.1) rotate(-5deg);
+    filter: drop-shadow(0 0 25px rgba(255, 0, 0, 0.8));
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  .home-trigger img {
+    width: 100%;
+    height: 100%;
+    animation: pulse 3s infinite ease-in-out;
+  }
+
+  nav { 
+    background-color: rgba(17, 17, 17, 0.9); 
+    padding: 20px 0; 
+    border-top: 2px solid #ff0000; 
+    border-bottom: 2px solid #ff0000; 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+  }
+  nav a { color: white; text-decoration: none; text-transform: uppercase; font-size: 1rem; transition: 0.3s; letter-spacing: 1px; font-weight: bold; }
+  nav a:hover { color: #ff0000; }
+
+  header { background-color: #ff0000; padding: 60px 20px; border-bottom: 5px solid #ffffff; }
+  h1 { font-size: 3rem; margin: 0; letter-spacing: -2px; }
+
+  .container { max-width: 1000px; margin: auto; padding: 40px 20px; text-align: left; }
+  
+  .story-section { 
+    background: rgba(17, 17, 17, 0.8); 
+    border-left: 5px solid #ff0000; 
+    padding: 30px; 
+    margin-bottom: 40px; 
+    backdrop-filter: blur(10px);
+  }
+
+  h2 { color: #ff0000; text-transform: uppercase; font-size: 2rem; margin-top: 0; }
+  p { font-family: 'Arial', sans-serif; line-height: 1.8; color: #ccc; font-size: 1.1rem; }
+
+  .timeline {
+    position: relative;
+    margin-top: 50px;
+    padding-left: 40px;
+    border-left: 2px solid #333;
+  }
+  .timeline-item { position: relative; margin-bottom: 40px; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -49px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background: #ff0000;
+    border-radius: 50%;
+    border: 3px solid #000;
+  }
+  .year { color: #ff0000; font-size: 1.5rem; display: block; margin-bottom: 5px; }
+
+  .mission-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .mission-card {
+    background: #111;
+    padding: 30px;
+    border: 1px solid #ff0000;
+    text-align: center;
+  }
+  .mission-card i { font-size: 3rem; color: #ff0000; margin-bottom: 20px; }
+
+  footer { padding: 60px; color: #555; font-size: 0.8rem; text-align: center; }
+</style>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <a href="index.html" class="home-trigger" title="Go to Home">
+    <img src="https://res.cloudinary.com/dzpepncyt/image/upload/v1767845420/web_logo_xlr3xz.png" alt="DYNAMIC LOGO">
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html" style="color:#ff0000">About Us</a>
+    <a href="achievements.html">Achievements</a> <a href="roster.html">Roster</a>
+    <a href="join.html">Join Us</a>
+  </nav>
+
+  <header>
+    <h1>OUR STORY</h1>
+    <p>FROM SCHOOL BENCHES TO THE BIG STAGE</p>
+  </header>
+
+  <div class="container">
+    <div class="story-section">
+      <h2>The Genesis</h2>
+      <p>ESTABLISHED IN 2018 | CONTINUING UNTIL THE LAST BREATH -
+
+What started as a dream between a group of kids in the back of a classroom has evolved into a powerhouse. In 2018, we saw a vision of what gaming could be; today, we live it.
+
+We aren't just a team; we are a brotherhood forged in the arena. From school-day strikers to elite competitors, we’ve stayed true to our roots while dominating the competition.
+
+WE ARE DYNAMIC. WE ARE CRUSHING IT.</p>
+    </div>
+
+    <h2>Evolution Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="year">2018</span>
+        <h3>The Beginning</h3>
+        <p>Dynamic was officially founded. We started competing in local school tournaments and small online cups, laying the foundation for what was to come.</p>
+      </div>
+      <div class="timeline-item">
+        <span class="year">2021</span>
+        <h3>The Grind</h3>
+        <p>During the global shift, we expanded our roster and started making noise in the semi-pro circuit. Our "Leadership" team was solidified.</p>
+      </div>
+      <div class="timeline-item">
+        <span class="year">2026</span>
+        <h3>Current Era</h3>
+        <p>Today, Dynamic Esports stands as a symbol of consistency and passion. With a complete roster of "Elites," we are pushing the boundaries of competitive play every single day.</p>
+      </div>
+    </div>
+
+    <div class="mission-box">
+      <div class="mission-card">
+        <i class="fas fa-crosshairs"></i>
+        <h3>PRECISION</h3>
+        <p>We don't just play; we calculate. Every move is a step toward victory.</p>
+      </div>
+      <div class="mission-card">
+        <i class="fas fa-users"></i>
+        <h3>UNITY</h3>
+        <p>A group of kids in 2018, a brotherhood today. We win together, we learn together.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>&copy; 2018 DYNAMIC ESPORTS | ALL RIGHTS RESERVED</footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ff0000" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.6, "random": true },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+      },
+      "interactivity": {
+        "detect_on": "window",
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
