@@ -24,7 +24,7 @@
         .success-text { color: #ccc; margin-bottom: 30px; font-family: 'Arial', sans-serif; }
         h2 { color: #ff0000; text-transform: uppercase; margin-bottom: 30px; text-align: center; }
         .input-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; color: #ff0000; font-size: 0.8rem; text-transform: uppercase; }
+        label { display: block; margin-bottom: 8px; color: #ffffff; font-size: 0.8rem; text-transform: uppercase; }
         input, select, textarea { width: 100%; padding: 12px; background: rgba(30, 30, 30, 0.8); border: 1px solid #444; color: white; border-radius: 5px; font-family: 'Arial', sans-serif; box-sizing: border-box; }
         input:focus, select:focus, textarea:focus { border-color: #ff0000; outline: none; box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
         .submit-btn { background: #ff0000; color: white; border: none; padding: 18px 30px; font-family: 'Arial Black'; font-size: 1.2rem; width: 100%; cursor: pointer; transition: 0.3s; margin-top: 20px; border-radius: 5px; box-sizing: border-box; display: block; text-decoration: none; text-align: center; }
@@ -55,31 +55,32 @@
 
     <section class="form-container">
         <div id="application-form">
-            <h2>Apply to DYNAMIC</h2>
+            <h2 style="color: #ccc;">BE A  <span style="color: #ff0000;">DYNAMIC</span> GAMER</h2>
             <form id="joinForm" action="https://api.web3forms.com/submit" method="POST">
                 
                 <input type="hidden" name="access_key" value="66263209-08b4-406a-901e-88d3218fcaf0">
                 
                 <div class="input-group">
-                    <label>Full Name</label>
+                    <label>Full Name <span style="color: #ff0000;">*</span></label>
                     <input type="text" name="Full Name" placeholder="Enter your name" required>
                 </div>
                 <div class="input-group">
-                    <label>In-Game Name (IGN)</label>
+                    <label>In-Game Name (IGN) <span style="color: #ff0000;">*</span></label>
                     <input type="text" name="IGN" placeholder="e.g. SYCORAX_OP" required>
                 </div>
                 <div class="input-group">
-                    <label>Primary Game</label>
+                    <label>Primary Game <span style="color: #ff0000;">*</span></label>
                     <input type="text" name="Primary Game" placeholder="Which game do you play?" required>
                 </div>
                 <div class="input-group">
-                    <label>Role</label>
+                    <label>Role <span style="color: #ff0000;">*</span></label>
                     <select name="Team Role" required>
                         <option value="" disabled selected>Choose your specialty</option>
                         <option value="assaulter">Assaulter</option>
                         <option value="sniper">Sniper</option>
                         <option value="igl">IGL</option>
                         <option value="support">Support / Manager</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
                 <div class="input-group">
