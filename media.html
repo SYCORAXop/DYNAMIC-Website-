@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  body { 
+    background-color: #000000; 
+    color: #ffffff; 
+    font-family: 'Arial Black', sans-serif; 
+    margin: 0; padding: 0; text-align: center; overflow-x: hidden;
+  }
+
+  #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; background-color: #000; }
+
+  /* FIXED LOGO */
+  .home-trigger {
+    position: fixed; bottom: 30px; right: 30px; z-index: 9999; width: 80px; height: 80px; cursor: pointer;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.5));
+  }
+  .home-trigger img { width: 100%; height: 100%; animation: pulse 3s infinite ease-in-out; }
+  @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+  nav {
+    background: rgba(17, 17, 17, 0.7);
+    backdrop-filter: blur(15px);
+    border-bottom: 2px solid rgba(255, 0, 0, 0.5);
+    padding: 20px 0; display: flex; justify-content: center; gap: 30px; position: sticky; top: 0; z-index: 1000;
+  }
+  nav a { color: white; text-decoration: none; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
+  nav a:hover { color: #ff0000; }
+
+  header { background: linear-gradient(to bottom, #ff000033, transparent); padding: 60px 20px; }
+  h1 { font-size: 3rem; margin: 0; letter-spacing: -2px; }
+
+  /* MEDIA GRID */
+  .media-container {
+    max-width: 1200px; margin: auto; padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+  }
+
+  .media-card {
+    background: #111; border: 1px solid #222; border-radius: 8px; overflow: hidden;
+    transition: 0.4s; position: relative;
+  }
+  .media-card:hover { border-color: #ff0000; transform: scale(1.02); }
+
+  .video-placeholder {
+    width: 100%; aspect-ratio: 16 / 9; background: #000;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+
+  .video-placeholder i { font-size: 3rem; color: #ff0000; opacity: 0.8; }
+
+  .media-info { padding: 15px; text-align: left; }
+  .media-title { font-size: 1rem; color: #fff; margin: 0; text-transform: uppercase; }
+  .media-tag { color: #ff0000; font-size: 0.7rem; font-weight: bold; }
+
+  footer { padding: 40px; color: #444; font-size: 0.8rem; }
+</style>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <a href="index.html" class="home-trigger">
+    <img src="https://res.cloudinary.com/dzpepncyt/image/upload/v1767845420/web_logo_xlr3xz.png" alt="DYNAMIC">
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="youtube.html">Highlights</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="media.html"style="color:#ff0000">Media</a>
+      <a href="members.html">Members</a> 
+      <a href="join.html">Join Us</a>
+  </nav>
+
+  <header>
+    <h1>MEDIA <span style="color:#ff0000">VAULT</span></h1>
+    <p style="color:#888; font-family: sans-serif; font-size: 0.9rem;">TOURNAMENT HIGHLIGHTS & CLUTCH MOMENTS</p>
+  </header>
+
+  <div class="media-container">
+    
+    <div class="media-card">
+      <div class="video-placeholder">
+        <i class="fas fa-play-circle"></i>
+        </div>
+      <div class="media-info">
+        <p class="media-tag">BGMI MONTAGE</p>
+        <h3 class="media-title">The Grand Finals Clutch</h3>
+      </div>
+    </div>
+
+    <div class="media-card">
+      <div class="video-placeholder">
+        <i class="fas fa-play-circle"></i>
+      </div>
+      <div class="media-info">
+        <p class="media-tag">COD MOBILE</p>
+        <h3 class="media-title">Insane Sniper Feed - S12</h3>
+      </div>
+    </div>
+
+    <div class="media-card">
+      <div class="video-placeholder">
+        <i class="fas fa-play-circle"></i>
+      </div>
+      <div class="media-info">
+        <p class="media-tag">TEAM DOCS</p>
+        <h3 class="media-title">Dynamic Bootcamp Tour</h3>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>&copy; 2018 DYNAMIC ESPORTS | ALL RIGHTS RESERVED</footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ff0000" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": false },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out" }
+      },
+      "interactivity": {
+        "detect_on": "window",
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>

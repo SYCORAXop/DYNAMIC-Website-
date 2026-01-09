@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+  body { 
+    background-color: #000000; 
+    color: #ffffff; 
+    font-family: 'Arial Black', sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    text-align: center; 
+    overflow-x: hidden;
+  }
+
+  #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #000;
+  }
+
+  .home-trigger {
+    position: fixed; bottom: 30px; right: 30px; z-index: 9999; width: 80px; height: 80px; cursor: pointer;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.5));
+  }
+  .home-trigger img { width: 100%; height: 100%; animation: pulse 3s infinite ease-in-out; }
+  @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+  nav {
+    background: rgba(17, 17, 17, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 2px solid rgba(255, 0, 0, 0.5);
+    padding: 20px 0; 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+  }
+  
+  nav a { color: white; text-decoration: none; text-transform: uppercase; font-size: 1rem; transition: 0.3s; font-weight: bold; }
+  nav a:hover { color: #ff0000; }
+
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .game-card {
+    background: linear-gradient(145deg, #111, #000);
+    border: 1px solid #333;
+    padding: 40px 20px;
+    transition: 0.4s;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .game-card:hover {
+    border-color: #ff0000;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+  }
+
+  /* LOGO STYLING */
+  .logo-wrapper {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .game-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.4s;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
+  }
+
+  .game-card:hover .game-logo {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.6));
+  }
+
+  .game-card h3 { font-size: 1.8rem; margin: 10px 0; text-transform: uppercase; }
+  .game-card p { font-family: sans-serif; color: #888; font-size: 0.9rem; }
+
+  footer { padding: 40px; font-size: 0.8rem; color: #777; background: #000; margin-top: 40px; }
+</style>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <a href="index.html" class="home-trigger">
+    <img src="https://res.cloudinary.com/dzpepncyt/image/upload/v1767845420/web_logo_xlr3xz.png" alt="DYNAMIC LOGO">
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="rosters-hub.html" style="color: #ff0000;">Rosters</a>
+    <a href="media.html">Media</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="join.html">Join Us</a>
+  </nav>
+
+  <section style="padding: 80px 20px;">
+    <h1 style="font-size: 3.5rem; color: #ffffff; letter-spacing: -2px;">OUR <span style="color:#ff0000">DIVISIONS</span></h1>
+    <div class="hub-grid">
+      
+      <a href="roster-valorant.html" class="game-card">
+        <div class="logo-wrapper">
+          <img src="https://res.cloudinary.com/dzpepncyt/image/upload/v1767939441/valorant-seeklogo_w3ltlt.png" alt="Valorant Logo" class="game-logo">
+        </div>
+        <h3>VALORANT</h3>
+        <p>TACTICAL 5V5 SHOOTER</p>
+      </a>
+
+      <a href="roster-bgmi.html" class="game-card">
+        <div class="logo-wrapper">
+          <img src="https://res.cloudinary.com/dzpepncyt/image/upload/v1767939588/bgmi_logo_ut6hlf.jpg" onerror="this.src='https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Battlegrounds_Mobile_India_logo.png/250px-Battlegrounds_Mobile_India_logo.png'" alt="BGMI Logo" class="game-logo">
+        </div>
+        <h3>BGMI</h3>
+        <p>BATTLE ROYALE MOBILE</p>
+      </a>
+
+      <a href="roster-cod.html" class="game-card">
+        <div class="logo-wrapper">
+          <img src="https://res.cloudinary.com/dzpepncyt/image/upload/v1767939583/call-of-duty-mobile-seeklogo_hcus8r.png" alt="COD Logo" class="game-logo" style="filter: invert(1) brightness(2);">
+        </div>
+        <h3>CALL OF DUTY MOBILE</h3>
+        <p>WARZONE & MULTIPLAYER</p>
+      </a>
+
+      <a href="roster-valorantmobile.html" class="game-card">
+        <div class="logo-wrapper">
+          <img src="https://res.cloudinary.com/dzpepncyt/image/upload/v1767939441/valorant-seeklogo_w3ltlt.png" alt="Valorant Logo" class="game-logo">
+        </div>
+        <h3>VALORANT MOBILE</h3>
+        <p>TACTICAL 5V5 SHOOTER</p>
+      </a> 
+
+    </div>
+  </section>
+
+  <footer>&copy; 2018 DYNAMIC ESPORTS | ALL RIGHTS RESERVED</footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ff0000" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      },
+      "interactivity": {
+        "detect_on": "window",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" },
+          "resize": true
+        },
+        "modes": {
+          "grab": { "distance": 200, "line_linked": { "opacity": 1 } },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>

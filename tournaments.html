@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* --- PAGE STYLES --- */
+    body { 
+      background-color: #000; color: #fff; font-family: 'Arial Black', sans-serif; 
+      margin: 0; padding: 0; text-align: center; overflow-x: hidden;
+    }
+    #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
+
+    /* Navigation - Matches Home Page */
+    nav {
+      background: rgba(17, 17, 17, 0.7) !important;
+      backdrop-filter: blur(15px) !important;
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 2px solid rgba(255, 0, 0, 0.5) !important;
+      padding: 20px 0; 
+      display: flex; justify-content: center; gap: 30px; position: sticky; top: 0; z-index: 1000;
+    }
+    nav a { color: white; text-decoration: none; text-transform: uppercase; font-size: 1rem; transition: 0.3s; letter-spacing: 1px; font-weight: bold; }
+    nav a:hover { color: #ff0000; }
+
+    /* Pulsing & Glowing Logo - Matches Home Page */
+    .home-trigger {
+      position: fixed; bottom: 30px; right: 30px; z-index: 9999; width: 80px; height: 80px; cursor: pointer;
+      transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.5));
+    }
+    .home-trigger img { width: 100%; height: 100%; animation: pulse 3s infinite ease-in-out; }
+    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+    header { padding: 80px 20px; background: linear-gradient(to bottom, #ff000033, transparent); }
+    h1 { font-size: 3rem; letter-spacing: -2px; }
+
+    /* Schedule Layout */
+    .schedule-container { max-width: 900px; margin: auto; padding: 20px; }
+    .game-title { 
+      color: #ff0000; text-align: left; font-size: 1.5rem; 
+      margin: 40px 0 20px; border-left: 5px solid #ff0000; padding-left: 15px;
+    }
+    .match-card {
+      background: rgba(15, 15, 15, 0.9); border: 1px solid rgba(255, 0, 0, 0.2); 
+      display: flex; align-items: center; margin-bottom: 15px; transition: 0.3s;
+    }
+    .match-card:hover { border-color: #ff0000; transform: scale(1.02); box-shadow: 0 0 20px rgba(255, 0, 0, 0.2); }
+    
+    .date-side { background: #ff0000; padding: 20px; min-width: 80px; font-size: 1.2rem; font-weight: bold; color: white; }
+    .info-side { padding: 20px; text-align: left; flex-grow: 1; }
+    .status-side { padding: 20px; color: #ff0000; font-size: 0.8rem; font-weight: bold; letter-spacing: 1px; }
+
+    /* Footer - Matches Home Page */
+    footer { padding: 40px; font-size: 0.8rem; color: #777; background: #000; }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  
+  <a href="index.html" class="home-trigger">
+    <img src="https://res.cloudinary.com/dzpepncyt/image/upload/v1767845420/web_logo_xlr3xz.png" alt="DYNAMIC LOGO">
+  </a>
+
+  <nav>
+     <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="youtube.html">Highlights</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="media.html">Media</a>
+      <a href="members.html">Members</a> 
+      <a href="join.html">Join Us</a>
+  </nav>
+
+  <header>
+    <h1>UPCOMING <span style="color:#ff0000">TOURNAMENTS</span></h1>
+  </header>
+
+  <div class="schedule-container">
+    
+    <h3 class="game-title">BGMI Schedule</h3>
+    
+    <div class="match-card">
+      <div class="date-side">15<br><small>JAN</small></div>
+      <div class="info-side">BGIS: FINALS<br><small style="color:#777; font-family: sans-serif;">TIER 1 SCRIMS | 8:00 PM</small></div>
+      <div class="status-side">LIVE SOON</div>
+    </div>
+
+    <div class="match-card">
+      <div class="date-side">18<br><small>JAN</small></div>
+      <div class="info-side">BATTLEGROUNDS PRO SERIES<br><small style="color:#777; font-family: sans-serif;">LEAGUE STAGE - DAY 1 | 5:00 PM</small></div>
+      <div class="status-side">UPCOMING</div>
+    </div>
+
+    <div class="match-card">
+      <div class="date-side">22<br><small>JAN</small></div>
+      <div class="info-side">DYNAMIC INVITATIONAL<br><small style="color:#777; font-family: sans-serif;">COMMUNITY CUP | 7:00 PM</small></div>
+      <div class="status-side">OPEN FOR REG</div>
+    </div>
+
+    <h3 class="game-title">COD Mobile Schedule</h3>
+
+    <div class="match-card">
+      <div class="date-side">25<br><small>JAN</small></div>
+      <div class="info-side">MASTERS CHAMPIONSHIP<br><small style="color:#777; font-family: sans-serif;">S&D MODE | QUALIFIERS</small></div>
+      <div class="status-side">UPCOMING</div>
+    </div>
+
+    <div class="match-card">
+      <div class="date-side">29<br><small>JAN</small></div>
+      <div class="info-side">SNIPER SHOWDOWN<br><small style="color:#777; font-family: sans-serif;">1V1 INVITATIONAL | 9:00 PM</small></div>
+      <div class="status-side">PENDING</div>
+    </div>
+
+    <h3 class="game-title">Valorant Schedule</h3>
+
+    <div class="match-card">
+      <div class="date-side">02<br><small>FEB</small></div>
+      <div class="info-side">CHALLENGERS LEAGUE<br><small style="color:#777; font-family: sans-serif;">VS TEAM VELOCITY | 6:30 PM</small></div>
+      <div class="status-side">QUALIFIERS</div>
+    </div>
+
+    <div class="match-card">
+      <div class="date-side">05<br><small>FEB</small></div>
+      <div class="info-side">SPIKE RUSH TOURNAMENT<br><small style="color:#777; font-family: sans-serif;">OFFSEASON BATTLE | 4:00 PM</small></div>
+      <div class="status-side">UPCOMING</div>
+    </div>
+
+  </div>
+
+  <footer>&copy; 2018 DYNAMIC ESPORTS | ALL RIGHTS RESERVED</footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ff0000" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ff0000", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      },
+      "interactivity": {
+        "detect_on": "window",
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
