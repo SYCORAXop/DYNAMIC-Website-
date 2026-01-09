@@ -43,6 +43,59 @@
       z-index: 1000;
     }
     
+/* --- SOCIAL ICON EFFECTS --- */
+    .social-container { 
+        padding: 80px 0; 
+        background-color: #ff000091; 
+        border-top: 5px solid #ffffff; 
+        margin-top: 60px; 
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .social-link { 
+        color: #ffffff; 
+        text-decoration: none; 
+        font-size: 3.5rem; 
+        display: inline-block; /* Crucial for the jump effect */
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        position: relative;
+        margin: 0 15px;
+    }
+
+    /* General Hover: Lift effect */
+    .social-link:hover { 
+        transform: translateY(-15px) scale(1.2);
+    }
+
+    /* YouTube Hover: Red */
+    .social-link:nth-child(1):hover {
+        color: #FF0000;
+        filter: drop-shadow(0 0 20px #FF0000);
+    }
+
+    /* Discord Hover: Blurple */
+    .social-link:nth-child(2):hover {
+        color: #5865F2;
+        filter: drop-shadow(0 0 20px #5865F2);
+    }
+
+    /* Instagram Hover: Insta-Pink */
+    .social-link:nth-child(3):hover {
+        color: #E1306C;
+        filter: drop-shadow(0 0 20px #E1306C);
+    }
+
+    /* Active State (Click) */
+    .social-link:active {
+        transform: scale(0.9);
+    }
+
+    @media (max-width: 600px) {
+        .social-link { font-size: 2.5rem; margin: 0 10px; }
+    }
+
     nav a { color: white; text-decoration: none; text-transform: uppercase; font-size: 1rem; transition: 0.3s; letter-spacing: 1px; font-weight: bold; }
     nav a:hover { color: #ff0000; }
 
@@ -332,7 +385,7 @@
       <div class="stat-block"><span class="stat-number">2018</span><span class="stat-label">Founded</span></div>
     </div>
 
-    <div class="social-container">
+   <div class="social-container">
       <a href="https://youtube.com/@sycoraxop" class="social-link" target="_blank" title="YouTube">
         <i class="fab fa-youtube"></i>
       </a>
