@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DYNAMIC ESPORTS | HOME</title>
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dzpepncyt/image/upload/v1767845420/web_logo_xlr3xz.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
   <style>
@@ -287,6 +289,23 @@
     }
     #rosters-preview:hover { background: rgba(255, 0, 0, 0.05); border-color: rgba(255, 0, 0, 0.4); }
 
+    /* --- DYNAMIC STYLING INTERACTIVE CSS --- */
+    #dynamic-styling {
+      background: rgba(20, 20, 20, 0.5);
+      border: 1px solid rgba(255, 0, 0, 0.1);
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 60px;
+      transition: 0.5s ease;
+      z-index: 1;
+    }
+
+    #dynamic-styling:hover {
+      background: rgba(255, 0, 0, 0.05);
+      border-color: rgba(255, 0, 0, 0.4);
+    }
+
     .roster-cta {
       display: inline-block; padding: 18px 50px; background: transparent; color: white; text-decoration: none; font-weight: bold; border: 2px solid #ff0000; transition: 0.4s; text-transform: uppercase; letter-spacing: 2px;
     }
@@ -435,6 +454,24 @@
       </div>
     </section>
 
+<section id="dynamic-styling">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; background: rgba(255, 0, 0, 0.05); filter: blur(80px); border-radius: 50%; z-index: 0;"></div>
+
+  <div style="position: relative; z-index: 1;">
+    <span style="color: #ff0000; font-size: 0.8rem; letter-spacing: 5px; font-weight: bold; text-transform: uppercase;">Official Merchandise</span>
+    <h2 style="margin-top: 10px; margin-bottom: 20px;">DYNAMIC STYLING</h2>
+    <p style="max-width: 650px; margin: 0 auto 40px auto; color: #888; font-family: sans-serif; line-height: 1.8; font-size: 1rem;">
+      Level up your wardrobe with the official gear. From pro-grade jerseys to street-ready apparel, 
+      wear the legacy of <span style="color: #fff; font-weight: bold;">DYNAMIC ESPORTS</span>.
+    </p>
+    
+    <div class="btn-container" style="margin-top: 0;">
+      <a href="https://sycoraxop.github.io/DYNAMIC_STORE/index.html" target="_blank" class="action-btn">
+        <i class="fas fa-shopping-bag" style="margin-right: 12px;"></i> EXPLORE COLLECTION
+      </a>
+    </div>
+  </div>
+</section>
 
     <section id="partners">
       <h2>OUR PARTNERS</h2>
